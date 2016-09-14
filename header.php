@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
 <head>
+	<?php $home = get_template_directory_uri(); ?>
 	<meta charset="utf-8">
-	<title>TESTE</title>
-	<?php wp_head(); ?>
-	<link href="<?= get_template_directory_uri(); ?>/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?= $home ?>/assets/css/reset.css">
+	<link rel="stylesheet" href="<?= $home; ?>/style.css">
+
+
+	<?php	wp_head(); ?>
 </head>
-
-
 <body>

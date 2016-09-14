@@ -13,8 +13,10 @@ $description = $nomePlural .' da imobiliária Malura';
 
 $labels = array(
 		'name' => $nomePlural,
-		'name_singular' => $nomeSingular,
+		'singular_name' => $nomeSingular,
 		'add_new_item' => 'Adicionar novo '.$nomeSingular,
+		'view_item' => 'Ver ' . $singular,
+		'new_item' => 'Novo ' . $singular,
 		'edit_item' => 'Editar '.$nomeSingular,
 	);
 
@@ -39,3 +41,4 @@ register_post_type('imovel', $args);
 
 //https://developer.wordpress.org/reference/functions/add_action/
 add_action('init', 'cadastraPostTypeImoveis');
+
