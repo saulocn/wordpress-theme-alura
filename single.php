@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+$cssEspecifico = 'single';
+require_once('header.php');
+?>
 
 <main>
 	
@@ -22,7 +25,22 @@
 				<div class="single-imovel-descricao">
 					<?php the_content(); ?>
 				</div>
+				<?php $imoveisMetaData = get_post_meta( $post->ID );  ?>
 
+				<dl class="single-imovel-informacoes">
+					<dt>Preço:</dt>
+					<dd><?=$imoveisMetaData['preco_id'][0]; ?></dd>
+
+					<dt>Vagas:</dt>
+					<dd><?=$imoveisMetaData['vagas_id'][0]; ?></dd>
+
+					<dt>Banheiros:</dt>
+					<dd><?=$imoveisMetaData['banheiros_id'][0]; ?></dd>
+
+
+					<dt>Quartos:</dt>
+					<dd><?=$imoveisMetaData['quartos_id'][0]; ?></dd>
+				</dl>
 
 			</section>
 

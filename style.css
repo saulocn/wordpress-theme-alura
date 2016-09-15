@@ -1,15 +1,15 @@
 /*
 Theme Name: Maluras
 Theme URI: 
-Author: Yuri Padilha
-Author URI: http://www.caelum.com.br/;
+Author: Saulo Carvalho
+Author URI: 
 Description: Tema para imobiliária Maluras
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: 
+License URI: 
 Tags: imobiliária, maluras
-Text Domain: maluras
+Text Domain: 
 */
-
+/*
 html {
 	font-size: 16px;
 	height: 100%;
@@ -40,7 +40,6 @@ body {
 	margin: 0 auto;
 }
 
-/* Index */
 
 .home-main {
 	background-color: #F4F4F4;
@@ -93,7 +92,90 @@ body {
 	flex-basis: 100%;
 }
 
-/* single */
+
+.pagina-main {
+	background-color: #F4F4F4;
+	height: 100%;
+}
+
+.pagina {
+	background-color: #FFF;
+	width: 1000px;
+	margin: 0 auto;
+	padding: 1.5rem;
+
+	line-height: 1.7;
+	font-size: 1rem;
+}
+
+.pagina-titulo {
+	font-size: 3rem;
+	font-weight: 700;
+	color: #000;
+}
+
+.pagina-conteudo {
+	margin-bottom: 1rem;
+}
+
+.pagina-thumbnail img {
+	max-width: 100%;
+	max-height: 500px;
+}
+
+.contato-subtitulo {
+	font-size: .9rem;
+}
+
+.form-nome,
+.form-email,
+.form-mensagem {
+	margin: 1rem 0;
+}
+
+.form-nome input,
+.form-email input {
+	width: 100%;
+	display: block;
+	font-size: 1rem;
+	padding: .5rem;
+	border-radius: 8px;
+	border: 1px solid #949494;
+	box-sizing: border-box;
+}
+
+.form-mensagem textarea {
+	width: 100%;
+	height: 200px;
+	border-radius: 8px;
+	box-sizing: border-box;
+	border: 1px solid #949494;
+}
+
+.form-nome label,
+.form-email label,
+.form-mensagem label {
+	display: block;
+	font-weight: 700;
+	font-size: 1.1rem;
+	margin-bottom: .5rem;
+}
+
+.email-fracasso,
+.email-sucesso {
+	display: block;
+	color: #FFF;
+	padding: .5rem;
+}
+
+.email-sucesso {
+	background-color: green;
+}
+
+.email-fracasso {
+	background-color: red;
+}
+
 
 .single-imovel {
 	margin-bottom: 2rem;
@@ -145,12 +227,48 @@ body {
 
 
 
+header .container,
+#menu-menu-principal {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
 
+header {
+	background-color: #555;
+}
 
+.menu li:not(:first-child) {
+	margin-left: 3rem;
+}
 
+.menu a {
+	text-decoration: none;
+	color: #FFF;
+	letter-spacing: .05rem;
+	font-weight: 300;
+}
 
+.menu li:hover a,
+.menu .current-menu-item a {
+	font-weight: 700;
+}
 
+header .container {
+	justify-content: center;
+	padding: .5rem 0;
+}
 
+.menu-item-type-custom a {
+	height: 80px;
+	width: 150px;
+	text-indent: -9999px;
+	display: block;
+}
 
-
+.menu-item-type-custom {
+	background-image: url(assets/imagens/header-logo.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 

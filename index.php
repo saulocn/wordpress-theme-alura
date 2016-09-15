@@ -1,14 +1,47 @@
-<?php //include('header.php'); substituído pela função abaixo ?>
-<?php get_header(); ?>
+<?php 
+
+$queryTaxonomy = array_key_exists('taxonomy', $_GET);
+if($queryTaxonomy && $_GET['taxonomy']===''){
+	wp_redirect(home_url());
+}
+$cssEspecifico = 'index';
+//get_header(); 
+require_once('header.php');
+?>
 <main class="home-main">
 	<div class="container">
 
-		<h1>Bem Vindo ao Maluras!</h1>
+
+		<?php $taxonomias = get_terms('localizacao'); ?>
+		<form class="busca-localizacao-form" method="GET" action="<?= bloginfo('url'); ?>">
+			<div class="taxonomy-select-wrapper">
+				<select name="taxonomy">
+					<option value="">Todos os imóveis</option>
+					<?php foreach ($taxonomias as $taxonomia) { ?>
+					<option value="<?php echo $taxonomia->slug; ?>"><?php echo $taxonomia->name; ?></option>	
+					<?php } ?>
+				</select>
+				<button type="submit">Filtrar</button>
+			</div>
+		</form>
+
 		<?php 
 
+		if($queryTaxonomy){
+			$qLocalizacao = array(
+				'taxonomy' => 'localizacao',
+				'field' => 'slug',
+				'terms' => $_GET['taxonomy']
+				);
+		}
+
+		$taxQuery = array($qLocalizacao);
+
 		$args = array(
-			'post_type' => 'imovel'
+			'post_type' => 'imovel',
+			'tax_query' => $taxQuery
 			);
+
 		$loop = new WP_Query($args);
 		if ( $loop->have_posts() ) {
 			?>
